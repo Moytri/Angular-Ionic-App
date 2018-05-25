@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Port Number</ion-label>
+      <ion-input [(ngModel)]="portname" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input [(ngModel)]="pwd" type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" (click)="setPerson()" block>Submit</button>
+  </div>
+  <ion-item>
+  {{input}}
+  </ion-item>
+</ion-content>
