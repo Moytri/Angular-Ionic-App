@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Http, Response } from '@angular/http';
 import { RedditDataProvider } from '../../providers/reddit-data/reddit-data';
 
 
@@ -10,9 +9,9 @@ import { RedditDataProvider } from '../../providers/reddit-data/reddit-data';
   providers: [RedditDataProvider]
 })
 
-export class ContactPage implements OnInit {
+export class ContactPage {
 
-    myNames: Observable<any>;
+    myNames: Array<any>;
     _myDataService: RedditDataProvider;
 
 
@@ -21,13 +20,16 @@ export class ContactPage implements OnInit {
     }
 
 
+    ngOnInit()  {
+    }
+    
     ionViewDidLoad(){
         console.log(this._myDataService.getLocalData())
         this._myDataService.getLocalData().subscribe(
    
             data => {
                 this.myNames = data
-                console.log(JSON.stringify(data))
+                //console.log(JSON.stringify(data))
             },
 
             error => {
