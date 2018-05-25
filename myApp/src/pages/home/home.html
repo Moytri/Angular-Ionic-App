@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
@@ -7,10 +10,18 @@
 <ion-content padding>
   <h2>Welcome to Angular-Ionic-App!</h2>
   <p>
-    This is my BCIT homework 04. It reads and displays data asynchronously from a JSON file. Allows a user to store and read data using Ionic storage. It uses ionic components. Please Go to "More" tab to set your localhost to launch the project!
+    This is my BCIT homework 04. It reads and displays data asynchronously from a JSON file. Allows a user to store and read data using Ionic storage. It uses ionic components.  
   </p>
+  
+  <ul>
+      <li>"Home" tab reads data from Ionic storage. Click "Menu" icon from Home nav.</li>
+      <li>"About" tab shows icons and details.</li>
+      <li>"Contact" tab reads contact list from local JSON file, "fab-icon" is included at right bottom.</li>
+      <li>"More" tab works as Ionic storage to store and read data!</li>
+      <li>"Film" tab reads film name from remote source!</li>
+  </ul> 
 
-   <p>
+  <p>
     Navigate to http://localhost: {{name}} <br/>
     Password: {{pwd}}
   </p>
