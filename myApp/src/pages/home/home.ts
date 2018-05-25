@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { MenuController } from 'ionic-angular';
+import {ContactPage} from '../../pages/contact/contact';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +12,8 @@ export class HomePage {
   name:string;
   pwd:string;
 
-  constructor(public navCtrl: NavController, public storage: Storage) {
+  constructor(public navCtrl: NavController, public storage: Storage, public menuCtrl: MenuController) {
+      
       // Prepare storage.
       storage.ready().then(() => {
           // Store some data if none exists.
@@ -35,5 +38,17 @@ export class HomePage {
       this.storage.get('pwd').then((pwd) => {
           this.pwd = pwd;
       });
+  }
+
+   closeMenu() {
+     this.menuCtrl.close();
+   }
+
+   toggleMenu() {
+     this.menuCtrl.toggle();
+   }
+
+  openContact(){
+    this.navCtrl.setRoot(ContactPage);
   }
 }
